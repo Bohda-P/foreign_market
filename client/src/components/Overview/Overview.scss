@@ -1,0 +1,20 @@
+.hide {
+    display: none;
+}
+
+.table {
+    display: block;
+    width: 1000px !important;
+    position: absolute;
+    left: 255px;
+    top: 50px;
+    bottom: 0;
+    overflow: scroll;
+}
+
+.controllButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}

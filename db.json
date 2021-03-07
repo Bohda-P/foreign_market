@@ -1,0 +1,26 @@
+{
+    "id": "602e3c83d5f82722d02639c0",
+    "area": "Vinnytsia",
+    "import": {
+        "date": "2019-06-17T22:00:00.000Z",
+        "all": 631.6,
+        "cis": 0,
+        "other_countries": 0,
+        "europe": 338.7,
+        "eu_countries": 309.1,
+        "asia": 190.9,
+        "africa": 6.3,
+        "usa": 47.1,
+        "oceania": 0.3
+    },
+    "export": {
+        "date": "2019-06-17T22:00:00.000Z",
+        "all": 1455.3,
+        "europe": 544.8,
+        "eu_countries": 542.9,
+        "asia": 521,
+        "africa": 173.6,
+        "usa": 19.4,
+        "oceania": 4.8
+    }
+}

@@ -1,0 +1,20 @@
+.links {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 255px;
+    height: 100vh;
+    background-color: #363740;
+}
+
+.nav-item a {
+    color: #DDE2FF !important;
+    width: 100%;
+    height: 50px;
+    margin-top: 30px !important;
+    font-size: 20px !important;
+    &:hover {
+        background-color: #9FA2B4;
+    }
+}
+

@@ -19,10 +19,10 @@ class Overview extends Component {
             itemOtherCountries: null,
             itemEurope: null,
             itemEUcountries: null,
-            itemAsia: null,
+            itemAsia: null,  
             itemAfrica: null,
-            itemUsa: null,
-            itemOceania: null
+            itemUsa: null,  
+            itemOceania: null  
         }
         this.getNameRegion = this.getNameRegion.bind(this);
         this.handllerDirection = this.handllerDirection.bind(this);

@@ -1,7 +1,14 @@
-.statics{
+.statics {
     position: absolute;
     top:0px;
     left: 255px;
+    
+}
+
+.target_market {
+    position: absolute;
+    top:0px;
+    left: 855px;
     
 }
 
@@ -22,11 +29,11 @@
 
 .visible {
     display: block;
-    width: 800px;
-    height: 800px;
+    width: 1000px;
+    height: auto;
     position: absolute;
-    left: 40%;
-    top: 50px;
+    left: 23%;
+    top: 59px;
     margin: 0;
     padding: 0;
 }

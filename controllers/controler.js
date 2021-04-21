@@ -2,10 +2,10 @@ const Region = require('../models/model.js')
 
 const getAreaByName = async (req, res) => {
     const {area} = req.body
-    const {direction} = req.query
+    const {direction, direction_market} = req.query
     const region = await Region.findOne({area})
     const years = region[direction].map(year => new Date(year.date).getFullYear())
-    const alls = region[direction].map(all => Math.ceil(all.all))
+    const alls = region[direction].map(all => Math.ceil(all[direction_market]))
     res.json({years, alls})
 }
 

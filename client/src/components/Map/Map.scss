@@ -1,11 +1,20 @@
+@mixin cityName {
+  position: absolute;
+  color: #1905cc8c;
+  font-weight: 600;
+  cursor: default;
+  font-size: 11px;
+}
+
 svg {
     stroke: #fff;
-
+    color: #fff;
     // All layers are just path elements
     path {
-      fill: #a82b2b;
+      fill: #a824a82b;
       cursor: pointer;
       outline: none;
+      transition: 0.4s;
 
       // When a layer is hovered
       &:hover {
@@ -39,10 +48,15 @@ svg {
 }
 
 .Map {
-    width: 100%;
-    margin: 5rem auto;
-    width: 500px;
+    display: flex;
+    justify-content: end;
+    width: 53rem;
+    margin: 5rem 0 0 20rem;
     background-color: #cccccc;
+    svg {
+      position: relative;
+      right: 0;
+    }
 }
 
 .direction {
@@ -62,6 +76,7 @@ svg {
   width: 400px;
   height: 400px;
   position: absolute;
+  z-index: 10000;
   h1 {
     font-size: 16px;
   }
@@ -70,3 +85,160 @@ svg {
 .hide {
   display: none;
 }
+li {
+  list-style: none; 
+  text-align: center;
+  cursor: pointer;
+  span {
+   margin-bottom: 0;
+  }
+ 
+}
+.wrapper-dropdown {
+  width: 300px;
+  top: 0;
+  .search-wrapper {
+    border: 1px solid #000000;
+    height: 50px;
+  }
+}
+
+.dot {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.Vinnytsya {
+    @include cityName();
+    left: 37rem;
+    top: 19.5rem;
+}
+
+.Volyn {
+  @include cityName();
+  left: 25.5rem;
+  top: 9.5rem;
+}
+
+.Sumy {
+  @include cityName();
+  left: 54rem;
+  top: 10.5rem;
+}
+
+.Dnepro {
+  @include cityName();
+  left: 56rem;
+  top: 21rem;
+}
+
+.Ivano-Frankivsk {
+  @include cityName();
+  left: 24.8rem;
+  top: 20.5rem;
+  font-size: 10px;
+}
+
+.Odesa {
+  @include cityName();
+  left: 43.2rem;
+  top: 29rem;
+}
+
+.Kyiv {
+  @include cityName();
+  left: 44.3rem;
+  top: 12.3rem;
+}
+.Kirovohrad {
+  @include cityName();
+  left: calc(50% + 5rem);
+  top: calc(50% + 1rem);
+}
+.Luhansk {
+  @include cityName();
+  right: 14rem;
+  top: 18rem;
+}
+.Zakarpattia {
+  @include cityName();
+  left: 21rem;
+  bottom: 16rem;
+}
+.Chernivtsi {
+  @include cityName();
+  left: 30rem;
+  bottom: 15.5rem;
+}
+.Ternopil {
+  @include cityName();
+  left: 28.2rem;
+  bottom: 20rem;
+}
+.Khmelnytsky {
+  @include cityName();
+  left: calc(50% - 10.5rem);
+  top: calc(50% - 4rem);
+}
+.Zaporizhia {
+  @include cityName();
+  left: calc(50% + 15rem);
+  bottom: 12rem;
+}
+.Zhytomyr {
+  @include cityName();
+  left: calc(50% - 6.5rem);
+  top: 12rem;
+}
+.Cherkasy {
+  @include cityName();
+  left: calc(50% + 2rem);
+  top: calc(50% - 2rem);
+}
+.Lviv {
+  @include cityName();
+  left: 25rem;
+  top: 15rem;
+}
+.Chernihiv {
+  @include cityName();
+  left: calc(50% + 4rem);
+  top: 8rem;
+}
+.Poltava {
+  @include cityName();
+  right: 29rem;
+  top: 15rem;
+}
+.Kharkiv {
+  @include cityName();
+  right: 22rem;
+  top: 16rem;
+}
+.Kherson {
+  @include cityName();
+  left: calc(50% + 10rem);
+  bottom: 9rem;
+}
+.Mykolaiv {
+  @include cityName();
+  left: calc(50% + 4rem);
+  bottom: 11.5rem;
+}
+.Donetsk {
+  @include cityName();
+  right: 17rem;
+  bottom: 14rem;
+}
+.Rivne {
+  @include cityName();
+  left: 32rem;
+  top: 9rem;
+}
+.Crimea {
+  @include cityName();
+  left: 54rem;
+  bottom: 3rem;
+}
+
+

@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@progress/kendo-react-dropdowns": "^4.5.0",
     "@south-paw/react-vector-maps": "^3.1.0",
     "axios": "^0.21.1",
     "chart.js": "^2.9.4",
     "http-proxy-middleware": "^0.19.1",
+    "multiselect-react-dropdown": "^1.6.11",
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
     "react-chartjs-2": "^2.11.1",

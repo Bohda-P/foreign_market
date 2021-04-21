@@ -4,14 +4,27 @@ const {getAreaByName, getAll, getAreaForTable, patchDataFromTable} = require('..
 const router = Router()
 
 router.post('/map', async (req, res) => {
-    const {year, direction} = req.query
-    const {id} = req.body
+    // const array = [[1,1,1,1,1], [1,1,1,1,1]]
+    // const result = array.reduce((r, a) => a.map((b, i) => (r[i] || 0) + b), [])
+    // console.log(result)
+    const {direction} = req.query
+    const {id, selectedValues} = req.body
     const region = await Region.findOne({map_id: id}, err => {
         if (err) {
             res.status(404).json('Not found')
         }  
-    }) 
-    const obj = region[direction].find(item => +year === new Date(item.date).getFullYear())
+    })
+
+    const obj = region[direction].filter(item => {
+        let reg 
+        selectedValues.forEach(year => {
+          if (+year == new Date(item.date).getFullYear()) {
+            reg = item
+          } 
+        })  
+        return reg
+    })
+  
     res.status(200).json({obj})  
 }) 
 

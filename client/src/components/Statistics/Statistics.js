@@ -10,6 +10,8 @@ class Statistics extends Component {
             names: '',
             info: null,
             isGraf: false,
+            target_market: 'All countries',
+            direction_market: 'all',
             dataGraph: {
                 labels: [],
                 datasets: [{
@@ -22,7 +24,9 @@ class Statistics extends Component {
         this.getNameRegion = this.getNameRegion.bind(this);
         this.getInfoRegion = this.getInfoRegion.bind(this);
         this.handllerMarket = this.handllerMarket.bind(this);
+        this.handllerTargetMarket = this.handllerTargetMarket.bind(this);
     }
+
 
    async getNameRegion () { 
         const res = await fetch('/regions/name')
@@ -38,7 +42,7 @@ class Statistics extends Component {
     }  
     
     async getInfoRegion (area) {
-        const res = await fetch(`/region/info?direction=${this.state.market}`, {
+        const res = await fetch(`/region/info?direction=${this.state.market}&direction_market=${this.state.direction_market}`, {
             method: 'POST',
                 body: JSON.stringify({area}),   
                 headers: {
@@ -78,6 +82,10 @@ class Statistics extends Component {
 
     handllerMarket (e){
         this.setState({market: e.target.outerText.toLowerCase()})
+    }
+
+    handllerTargetMarket(e) {
+       this.setState({target_market: e.target.outerText, direction_market: e.target.dataset.market})
     }
  
    render () {
@@ -123,6 +131,31 @@ class Statistics extends Component {
                     {this.state.names}
                 </ul> 
             </div>  
+
+            <div className="dropdown target_market">
+                <button className="btn btn-secondary dropdown-toggle own-btn item-list"
+                type="button"
+                id="dropdownMenuButton" 
+                data-toggle="dropdown"
+                >
+                    Target market: {this.state.target_market}
+                </button>
+                <ul 
+                className="dropdown-menu own" 
+                aria-labelledby="dropdownMenuButton"
+                onClick={this.handllerTargetMarket}
+                >
+                    <li className="dropdown-item item-list" data-market='all'>All countries</li>
+                    <li className="dropdown-item item-list" data-market='cis'>CIS</li>
+                    <li className="dropdown-item item-list" data-market='other_countries'>Other countries</li>
+                    <li className="dropdown-item item-list" data-market='europe'>Europe</li>
+                    <li className="dropdown-item item-list" data-market='eu_countries'> Europe countries</li>
+                    <li className="dropdown-item item-list" data-market='asia'>Asia</li>
+                    <li className="dropdown-item item-list" data-market='africa'>Africa</li>
+                    <li className="dropdown-item item-list" data-market='usa'>USA</li>
+                    <li className="dropdown-item item-list" data-market='oceania'>Oceania</li>
+                </ul> 
+            </div>  
             <div className={this.state.isGraf ? 'visible' : 'hidden'}>
                 <Line data={this.state.dataGraph}/>
             </div>
@@ -132,29 +165,3 @@ class Statistics extends Component {
 }
 
 export default Statistics
-
-{/* <li className="dropdown-item">Volyn</li>
-<li className="dropdown-item">Vinnytsya</li>
-<li className="dropdown-item">Sumy</li>
-<li className="dropdown-item">Dnepro</li>
-<li className="dropdown-item">Ivano-Frankivsk</li>
-<li className="dropdown-item">Kirovohrad</li>
-<li className="dropdown-item">Luhansk</li>
-<li className="dropdown-item">Zakarpattia</li>
-<li className="dropdown-item">Chernivtsi</li>
-<li className="dropdown-item">Ternopil</li>
-<li className="dropdown-item">Khmelnytsky</li>
-<li className="dropdown-item">Zaporizhia</li>
-<li className="dropdown-item">Zhytomyr</li>
-<li className="dropdown-item">Cherkasy</li>
-<li className="dropdown-item">Lviv</li>
-<li className="dropdown-item">Chernihiv</li>
-<li className="dropdown-item">Poltava</li>
-<li className="dropdown-item">Kyiv</li>
-<li className="dropdown-item">Odesa</li>
-<li className="dropdown-item">Kharkiv</li>
-<li className="dropdown-item">Kherson</li>
-<li className="dropdown-item">Mykolaiv</li>
-<li className="dropdown-item">Donetsk</li>
-<li className="dropdown-item">Rivne</li>
-<li className="dropdown-item">Crimea</li> */}
